@@ -82,8 +82,7 @@ end
 --- Normalizes the vector (scales it to a magnitude of 1).
 -- @return A new normalized Vector2 instance.
 function Vector2:Normalize()
-    local mag = self:Magnitude()
-    return self / mag
+    return self / self:Magnitude()
 end
 
 --- Computes the dot product with another vector.
@@ -104,9 +103,7 @@ end
 -- @param other (Vector2) The other vector.
 -- @return The angle in radians.
 function Vector2:AngleBetween(other)
-    local magProduct = self:Magnitude() * other:Magnitude()
-    local cosine = math.max(-1, math.min(1, self:Dot(other) / magProduct))
-    return math.acos(cosine)
+    return math.acos(math.max(-1, math.min(1, self:Dot(other) / self:Magnitude() * other:Magnitude())))
 end
 --- Computes the distance to another vector.
 -- @param other (Vector3) The other vector.
@@ -209,8 +206,7 @@ end
 --- Normalizes the vector (scales it to a magnitude of 1).
 -- @return A new normalized Vector3 instance.
 function Vector3:Normalize()
-    local mag = self:Magnitude()
-    return self / mag
+    return self / self:Magnitude()
 end
 
 --- Computes the dot product with another vector.
@@ -256,9 +252,7 @@ end
 -- @param other (Vector3) The other vector.
 -- @return The angle in radians.
 function Vector3:AngleBetween(other)
-    local magProduct = self:Magnitude() * other:Magnitude()
-    local cosine = math.max(-1, math.min(1, self:Dot(other) / magProduct))
-    return math.acos(cosine)
+    return math.acos(math.max(-1, math.min(1, self:Dot(other) / self:Magnitude() * other:Magnitude())))
 end
 
 --- Linearly interpolates between this vector and another.
@@ -358,8 +352,7 @@ end
 --- Normalizes the vector (scales it to a magnitude of 1).
 -- @return A new normalized Vector4 instance.
 function Vector4:Normalize()
-    local mag = self:Magnitude()
-    return self / mag
+    return self / self:Magnitude()
 end
 
 --- Computes the dot product with another vector.
