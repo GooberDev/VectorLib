@@ -73,6 +73,12 @@ function Vector2.__tostring(self)
     return string.format("Vector2(%.2f, %.2f)", self.x, self.y)
 end
 
+--- Metamethod to unpack the vector upon a call.
+-- @return The x and y components
+function Vector2.__call(self)
+    return self.x, self.y
+end
+
 --- Computes the magnitude (length) of the vector.
 -- @return The magnitude as a number.
 function Vector2:Magnitude()
@@ -103,7 +109,7 @@ end
 -- @param other (Vector2) The other vector.
 -- @return The angle in radians.
 function Vector2:AngleBetween(other)
-    return math.acos(math.max(-1, math.min(1, self:Dot(other) / self:Magnitude() * other:Magnitude())))
+    return math.acos(self:Dot(other) / self:Magnitude() * other:Magnitude())
 end
 --- Computes the distance to another vector.
 -- @param other (Vector3) The other vector.
@@ -197,6 +203,12 @@ function Vector3.__tostring(self)
     return string.format("Vector3(%.8f, %.8f, %.8f)", self.x, self.y, self.z)
 end
 
+--- Metamethod to unpack the vector upon a call.
+-- @return The x, y, and z components
+function Vector3.__call(self)
+    return self.x, self.y, self.z
+end
+
 --- Computes the magnitude (length) of the vector.
 -- @return The magnitude as a number.
 function Vector3:Magnitude()
@@ -252,7 +264,7 @@ end
 -- @param other (Vector3) The other vector.
 -- @return The angle in radians.
 function Vector3:AngleBetween(other)
-    return math.acos(math.max(-1, math.min(1, self:Dot(other) / self:Magnitude() * other:Magnitude())))
+    return math.acos(self:Dot(other) / self:Magnitude() * other:Magnitude())
 end
 
 --- Linearly interpolates between this vector and another.
@@ -341,6 +353,12 @@ end
 -- @return A string representation of the vector.
 function Vector4.__tostring(self)
     return string.format("Vector4(%.2f, %.2f, %.2f, %.2f)", self.x, self.y, self.z, self.w)
+end
+
+--- Metamethod to unpack the vector upon a call.
+-- @return The x, y, z, and w components
+function Vector4.__call(self)
+    return self.x, self.y, self.z, self.w
 end
 
 --- Computes the magnitude (length) of the vector.
