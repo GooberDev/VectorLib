@@ -200,7 +200,7 @@ end
 --- Metamethod to convert the vector to a string.
 -- @return A string representation of the vector.
 function Vector3.__tostring(self)
-    return string.format("Vector3(%.8f, %.8f, %.8f)", self.x, self.y, self.z)
+    return string.format("Vector3(%.2f, %.2f, %.2f)", self.x, self.y, self.z)
 end
 
 --- Metamethod to unpack the vector upon a call.
