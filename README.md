@@ -27,7 +27,7 @@ You can also create a vector with elements straight from an applications memory 
 This does assume that the elements are in successions of eachother. (4 bytes per element therefor either an integer or a float)
 
 Replace "address" with the actual address to the first element in the vector stored in memory
-
+You can also use the suffix "_d" here for a debug vector
 ```lua
 local vec2Integers = Vector2.read_ints_from_memory(address)
 local vec2Floats = Vector2.read_floats_from_memory(address)
@@ -36,7 +36,7 @@ local vec3Floats = Vector3.read_floats_from_memory(address)
 local vec4Integers = Vector4.read_ints_from_memory(address)
 local vec4Floats = Vector4.read_floats_from_memory(address
 ```
-You can also use the suffix "_d" here for a debug vector
+\
 
 To actually access the elements of the vector, you can use the x, y, z, and w fields. (Whether or not that field exists depends on the vector length)
 ```lua
