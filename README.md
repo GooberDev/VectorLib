@@ -7,7 +7,9 @@ To use the library, simply include the line ```require("Vector")``` at the top o
 To create a simple Vector of your desired length(2, 3, or 4) you can follow in the footsteps of the following code snippets.
 
 ```local vec2 = Vector2(-1, 2.1)```
+
 ```local vec3 = Vector3(-0.3, 1, 0)```
+
 ```local vec4 = Vector4(0.939, -0.3, 4, -6)```
 
 You can also create a vector with elements straight from an applications memory through he use of the following functions.
