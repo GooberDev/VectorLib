@@ -1,7 +1,9 @@
 # VectorLib
 ## A vector library made in lua, for lua.
 Made using the perception.cx api, and requires the perception.cx api for proper use.
+
 As for the library, it includes support for Vector2, Vector3, and Vector4.
+
 To use the library, simply include the line ```require("Vector")``` at the top of your script.
 
 To create a simple Vector of your desired length(2, 3, or 4) you can follow in the footsteps of the following code snippets.
