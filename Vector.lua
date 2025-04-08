@@ -155,7 +155,15 @@ function Vector2:AngleBetween(other)
     local cosine = math.max(-1, math.min(1, self:Dot(other) / magProduct))
     return math.acos(cosine)
 end
-
+--- Computes the distance to another vector.
+-- @param other (Vector3) The other vector.
+-- @return The distance as a number.
+function Vector2:DistTo(other)
+    if getmetatable(other) ~= Vector2 then
+        error("Vector2:DistTo: expected 'other' to be a Vector2")
+    end
+    return (self - other):Magnitude()
+end
 --- Linearly interpolates between this vector and another.
 -- @param other (Vector2) The target vector.
 -- @param t (number) The interpolation factor between 0 and 1.
