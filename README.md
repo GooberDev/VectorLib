@@ -6,12 +6,20 @@ As for the library, it includes support for Vector2, Vector3, and Vector4.
 
 To use the library, simply include the line ```require("Vector")``` at the top of your script.
 
+
 To create a simple Vector of your desired length(2, 3, or 4) you can follow in the footsteps of the following code snippets.
 
 ```lua
 local vec2 = Vector2(-1, 2.1)
 local vec3 = Vector3(-0.3, 1, 0)
 local vec4 = Vector4(0.939, -0.3, 4, -6)
+```
+
+To create a debug vector(uses error handling) you can create them using the suffix "_d"
+```lua
+local vec2_d = Vector2_d(-1, 2.1)
+local vec3_d = Vector3_d(-0.3, 1, 0)
+local vec4_d = Vector4_d(0.939, -0.3, 4, -6)
 ```
 
 You can also create a vector with elements straight from an applications memory through he use of the following functions.
@@ -28,9 +36,9 @@ local vec3Floats = Vector3.read_floats_from_memory(address)
 local vec4Integers = Vector4.read_ints_from_memory(address)
 local vec4Floats = Vector4.read_floats_from_memory(address
 ```
+You can also use the suffix "_d" here for a debug vector
 
 To actually access the elements of the vector, you can use the x, y, z, and w fields. (Whether or not that field exists depends on the vector length)
-
 ```lua
 local vec2ComponentX, vec2ComponentY = vec2.x, vec2.y
 local vec3ComponentX, vec3ComponentY, vec3ComponentZ = vec3.x, vec3.y, vec3.z
