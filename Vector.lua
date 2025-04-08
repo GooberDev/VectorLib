@@ -156,7 +156,7 @@ function Vector2:AngleBetween(other)
     return math.acos(cosine)
 end
 --- Computes the distance to another vector.
--- @param other (Vector3) The other vector.
+-- @param other (Vector2) The other vector.
 -- @return The distance as a number.
 function Vector2:DistTo(other)
     if getmetatable(other) ~= Vector2 then
