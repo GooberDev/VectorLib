@@ -15,7 +15,9 @@ To create a simple Vector of your desired length(2, 3, or 4) you can follow in t
 ```local vec4 = Vector4(0.939, -0.3, 4, -6)```
 
 You can also create a vector with elements straight from an applications memory through he use of the following functions.
+
 This does assume that the elements are in successions of eachother. (4 bytes per element therefor either an integer or a float)
+
 Replace "address" with the actual address to the first element in the vector stored in memory
 
 ```local vec2Integers = Vector2.read_ints_from_memory(address)```
